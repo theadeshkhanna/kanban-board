@@ -11,6 +11,7 @@ const getStories = () => {
       title: story.title,
       created_at: story.created_at,
       created_by: story.created_by,
+      status: story.status,
       todos: {
         total: totalTodos,
         completed: completedTodos,

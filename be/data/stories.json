@@ -6,7 +6,7 @@
       "description": "Enhance user authentication for better security",
       "created_at": "2024-02-07T08:30:00Z",
       "status": "in_progress",
-      "created_by": "Alice Johnson",
+      "created_by": "https://randomuser.me/api/portraits/men/46.jpg",
       "todos": [
         {
           "id": 1,
@@ -22,7 +22,7 @@
       "description": "Improve performance by optimizing database queries",
       "created_at": "2024-02-06T14:45:00Z",
       "status": "pending",
-      "created_by": "Bob Smith",
+      "created_by": "https://randomuser.me/api/portraits/women/46.jpg",
       "todos": [
         { "id": 1, "title": "Identify Slow Queries", "is_completed": false }
       ]
@@ -33,7 +33,7 @@
       "description": "Create a user-friendly and responsive dashboard",
       "created_at": "2024-02-05T10:00:00Z",
       "status": "done",
-      "created_by": "Charlie Brown",
+      "created_by": "https://randomuser.me/api/portraits/men/40.jpg",
       "todos": []
     },
     {
@@ -42,7 +42,7 @@
       "description": "Add real-time notifications for user actions",
       "created_at": "2024-02-04T16:20:00Z",
       "status": "pending",
-      "created_by": "David Miller",
+      "created_by": "https://randomuser.me/api/portraits/women/10.jpg",
       "todos": [
         {
           "id": 1,
@@ -62,7 +62,7 @@
       "description": "Organize and clean up the existing code",
       "created_at": "2024-02-03T12:10:00Z",
       "status": "in_progress",
-      "created_by": "Eva Davis",
+      "created_by": "https://randomuser.me/api/portraits/men/20.jpg",
       "todos": [
         {
           "id": 1,
@@ -79,7 +79,7 @@
       "description": "Incorporate external APIs for additional functionality",
       "created_at": "2024-02-02T09:55:00Z",
       "status": "pending",
-      "created_by": "Frank Wilson",
+      "created_by": "https://randomuser.me/api/portraits/women/30.jpg",
       "todos": []
     },
     {
@@ -88,7 +88,7 @@
       "description": "Ensure the application is fully responsive on mobile devices",
       "created_at": "2024-02-01T15:30:00Z",
       "status": "done",
-      "created_by": "Grace Turner",
+      "created_by": "https://randomuser.me/api/portraits/men/35.jpg",
       "todos": []
     },
     {
@@ -97,7 +97,7 @@
       "description": "Address and resolve reported bugs in the system",
       "created_at": "2024-01-31T11:45:00Z",
       "status": "in_progress",
-      "created_by": "Henry Harris",
+      "created_by": "https://randomuser.me/api/portraits/women/25.jpg",
       "todos": [
         { "id": 1, "title": "Fix UI Rendering Bug", "is_completed": false },
         {
@@ -113,7 +113,7 @@
       "description": "Add search functionality for improved user experience",
       "created_at": "2024-01-30T07:20:00Z",
       "status": "done",
-      "created_by": "Ivy Robinson",
+      "created_by": "https://randomuser.me/api/portraits/men/60.jpg",
       "todos": []
     },
     {
@@ -122,7 +122,7 @@
       "description": "Update project documentation for the latest changes",
       "created_at": "2024-01-29T13:15:00Z",
       "status": "pending",
-      "created_by": "Jack Turner",
+      "created_by": "https://randomuser.me/api/portraits/women/65.jpg",
       "todos": [
         { "id": 1, "title": "Revise User Guide", "is_completed": false },
         { "id": 2, "title": "Add Release Notes", "is_completed": true }
@@ -134,7 +134,7 @@
       "description": "Conduct performance testing to identify bottlenecks",
       "created_at": "2024-01-28T09:40:00Z",
       "status": "in_progress",
-      "created_by": "Katie Evans",
+      "created_by": "https://randomuser.me/api/portraits/men/28.jpg",
       "todos": [
         {
           "id": 1,
@@ -154,7 +154,7 @@
       "description": "Enhance existing features based on user feedback",
       "created_at": "2024-01-27T14:50:00Z",
       "status": "done",
-      "created_by": "Leo Martinez",
+      "created_by": "https://randomuser.me/api/portraits/women/21.jpg",
       "todos": []
     }
   ]
