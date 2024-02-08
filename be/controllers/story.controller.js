@@ -23,7 +23,7 @@ const updateStory = (req, res) => {
     });
   }
 
-  if (!["done", "in_progress", "active"].includes(status)) {
+  if (!["done", "in_progress", "pending"].includes(status)) {
     return res.status(404).json({
       error: "Invalid status, can not update",
     });

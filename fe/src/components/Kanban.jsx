@@ -2,13 +2,7 @@ import React from "react";
 import Card from "../components/Card";
 import { Droppable } from "react-beautiful-dnd";
 
-const Kanban = ({ stories }) => {
-  const doneStories = stories.filter((story) => story.status === "done");
-  const inProgressStories = stories.filter(
-    (story) => story.status === "in_progress"
-  );
-  const pendingStories = stories.filter((story) => story.status === "pending");
-
+const Kanban = ({ doneStories, inProgressStories, pendingStories }) => {
   return (
     <div className="flex space-x-4">
       <Droppable droppableId="pending">
@@ -16,7 +10,7 @@ const Kanban = ({ stories }) => {
           <div ref={provided.innerRef} {...provided.droppableProps}>
             <h1>Pending</h1>
             {pendingStories.map((story, index) => {
-              return <Card story={story} />;
+              return <Card index={index} story={story} />;
             })}
             {provided.placeholder}
           </div>

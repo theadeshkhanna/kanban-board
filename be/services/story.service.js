@@ -26,7 +26,7 @@ const updateStoryStatus = (id, status) => {
     const story = data.stories[storyIndex];
     data.stories.splice(storyIndex, 1);
     story.status = status;
-    data.stories.push(story);
+    data.stories.splice(storyIndex, 0, story);
     return getStories();
   } else {
     // throw errror

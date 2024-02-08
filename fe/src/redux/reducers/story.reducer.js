@@ -7,6 +7,7 @@ const initialState = {
 const storyReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_STORIES":
+    case "UPDATE_STORY":
       {
         return {
           ...state,
@@ -15,9 +16,8 @@ const storyReducer = (state = initialState, action) => {
       }
       break;
     case "FETCH_STORIES_COMPLETED":
+    case "UPDATE_STORY_COMPLETED":
       {
-        console.log(action);
-
         return {
           ...state,
           isLoading: false,
@@ -26,28 +26,13 @@ const storyReducer = (state = initialState, action) => {
       }
       break;
     case "FETCH_STORIES_ERROR":
+    case "UPDATE_STORY_ERROR":
       {
         return {
           ...state,
           isLoading: false,
           isError: true,
         };
-      }
-      break;
-    case "FETCH_STORY":
-      {
-      }
-      break;
-    case "CREATE_STORY":
-      {
-      }
-      break;
-    case "UPDATE_STORY":
-      {
-      }
-      break;
-    case "DELETE_STORY":
-      {
       }
       break;
     default: {

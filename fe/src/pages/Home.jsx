@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchStoriesSelector,
@@ -8,7 +8,9 @@ import Kanban from "../components/Kanban";
 import { DragDropContext } from "react-beautiful-dnd";
 
 const Home = (props) => {
-  const [stories, setStories] = useState({});
+  const [doneStories, setDoneStories] = useState([]);
+  const [pendingStories, setPendingStories] = useState([]);
+  const [inProgressStories, setInProgressStories] = useState([]);
 
   const data = useSelector(fetchStoriesSelector);
   const isLoading = useSelector(fetchStoriesLoading);
@@ -22,11 +24,28 @@ const Home = (props) => {
   }, []);
 
   useEffect(() => {
-    setStories(data);
+    if (data?.storyData?.length) {
+      const doneStories = data.storyData.filter(
+        (story) => story.status === "done"
+      );
+      const inProgressStories = data.storyData.filter(
+        (story) => story.status === "in_progress"
+      );
+      const pendingStories = data.storyData.filter(
+        (story) => story.status === "pending"
+      );
+
+      setDoneStories(doneStories);
+      setInProgressStories(inProgressStories);
+      setPendingStories(pendingStories);
+    }
   }, [data]);
 
   const onDragEnd = (result) => {
-    const { source, destination } = result;
+    const { source, destination, draggableId } = result;
+
+    console.log(`result`, result);
+
     if (!destination) {
       return;
     }
@@ -38,7 +57,15 @@ const Home = (props) => {
       return;
     }
 
-    // call update API here
+    if (destination.droppableId !== source.droppableId) {
+      dispatch({
+        type: "UPDATE_STORY",
+        payload: {
+          id: draggableId,
+          status: destination.droppableId,
+        },
+      });
+    }
   };
 
   return (
@@ -49,7 +76,11 @@ const Home = (props) => {
           {isLoading ? (
             <p>Loading...</p>
           ) : (
-            stories.storyData && <Kanban stories={stories.storyData} />
+            <Kanban
+              doneStories={doneStories}
+              inProgressStories={inProgressStories}
+              pendingStories={pendingStories}
+            />
           )}
         </div>
       </div>
