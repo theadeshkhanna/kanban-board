@@ -20,6 +20,20 @@ const getStories = () => {
   });
 };
 
+const updateStoryStatus = (id, status) => {
+  const storyIndex = data.stories.findIndex((story) => story.id === id);
+  if (storyIndex !== -1) {
+    const story = data.stories[storyIndex];
+    data.stories.splice(storyIndex, 1);
+    story.status = status;
+    data.stories.push(story);
+    return getStories();
+  } else {
+    // throw errror
+  }
+};
+
 module.exports = {
   getStoryData: getStories,
+  updateStoryStatus: updateStoryStatus,
 };
