@@ -8,10 +8,14 @@ const Kanban = ({ doneStories, inProgressStories, pendingStories }) => {
       <Droppable droppableId="pending">
         {(provided) => (
           <div ref={provided.innerRef} {...provided.droppableProps}>
-            <h1>Pending</h1>
-            {pendingStories.map((story, index) => {
-              return <Card index={index} story={story} />;
-            })}
+            <span className="bg-red-500 px-4 py-1 rounded-xl text-white text-sm">
+              Pending
+            </span>
+            <div className="mt-6">
+              {pendingStories.map((story, index) => {
+                return <Card index={index} story={story} />;
+              })}
+            </div>
             {provided.placeholder}
           </div>
         )}
@@ -19,10 +23,14 @@ const Kanban = ({ doneStories, inProgressStories, pendingStories }) => {
       <Droppable droppableId="in_progress">
         {(provided) => (
           <div ref={provided.innerRef} {...provided.droppableProps}>
-            <h1>In Progress</h1>
-            {inProgressStories.map((story, index) => {
-              return <Card index={index} story={story} />;
-            })}
+            <span className="bg-yellow-500 px-4 py-1 rounded-xl mb-4 text-white text-sm">
+              In Progress
+            </span>
+            <div className="mt-6">
+              {inProgressStories.map((story, index) => {
+                return <Card index={index} story={story} />;
+              })}
+            </div>
             {provided.placeholder}
           </div>
         )}
@@ -30,10 +38,14 @@ const Kanban = ({ doneStories, inProgressStories, pendingStories }) => {
       <Droppable droppableId="done">
         {(provided) => (
           <div ref={provided.innerRef} {...provided.droppableProps}>
-            <h1>Done</h1>
-            {doneStories.map((story, index) => {
-              return <Card index={index} story={story} />;
-            })}
+            <span className="bg-green-500 px-4 py-1 rounded-xl mb-4 text-white text-sm">
+              Done
+            </span>
+            <div className="mt-6">
+              {doneStories.map((story, index) => {
+                return <Card index={index} story={story} />;
+              })}
+            </div>
             {provided.placeholder}
           </div>
         )}

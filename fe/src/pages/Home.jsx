@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchStoriesSelector,
@@ -43,9 +43,6 @@ const Home = (props) => {
 
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
-
-    console.log(`result`, result);
-
     if (!destination) {
       return;
     }
@@ -70,8 +67,8 @@ const Home = (props) => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <div>
-        <h1 className="text-2xl flex justify-center">Kanban board</h1>
+      <div className="flex flex-col items-center">
+        <h1 className="text-2xl">Kanban board</h1>
         <div className="m-3">
           {isLoading ? (
             <p>Loading...</p>

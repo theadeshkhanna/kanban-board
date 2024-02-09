@@ -11,19 +11,19 @@ const Card = ({ index, story }) => {
         <div
           ref={provided.innerRef}
           className={
-            "bg-white p-4 flex-col rounded w-[300px] h-[100px] mb-4 cursor-pointer"
+            "bg-white px-4 pt-2 flex-col rounded-md w-[300px] h-[100px] mb-4 cursor-pointer"
           }
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
-          <p className="font-bold p-2">{title}</p>
-          <div className="flex justify-between">
-            <span className="bg-[#ababab] rounded-xl text-[12px] px-3 py-1">
+          <span className="font-bold p-2">{title}</span>
+          <div className="flex justify-between mt-4">
+            <span className="bg-[#dfdfdf] rounded-xl text-[12px] px-3 py-1">
               {readableDate}
             </span>
             <div className="flex justify-center align-middle space-x-4">
               {todos.total !== 0 && (
-                <div>
+                <div className="text-[10px] mt-2">
                   {todos.completed}/{todos.total}
                 </div>
               )}
